@@ -1,0 +1,36 @@
+:host {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+:host([hidden]), [hidden] {
+  display: none !important;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-info {
+  background-color: #25CEEB;
+  color: white;
+}

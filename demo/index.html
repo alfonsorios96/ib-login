@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module">
+        import '../ib-login.js';
+        import '@polymer/paper-toast/paper-toast.js';
+    </script>
+    <title>IbLogin</title>
+</head>
+<body>
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+  <div class="container">
+    <ib-login></ib-login>
+    <paper-toast id="toast"></paper-toast>
+  </div>
+  <script>
+    document.querySelector('ib-login').addEventListener('login-request', event => {
+      const toast = document.querySelector('#toast');
+      toast.text = JSON.stringify(event.detail);
+      toast.open();
+    });
+  </script>
+</body>
+</html>
